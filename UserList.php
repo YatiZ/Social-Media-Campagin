@@ -1,6 +1,6 @@
 <?php
 // Include database connection file
-include_once "config.php";
+include_once "backend/config.php";
 
 // Fetch data from the database
 $sql = "SELECT id, username, email FROM user_info";
@@ -50,7 +50,7 @@ $result = mysqli_query($con,$sql);
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="/UserList.php">User Lists</a>
             </li>
             <li class="nav-item">
@@ -106,10 +106,7 @@ $result = mysqli_query($con,$sql);
         ?>
       </ul>
     </div>
-    <div class="mx-10">
-        <a href="/Home.php">Home</a>
-        <a href="/auth/LoginPage.html">LogIn</a>
-    </div>
+
 </body>
 </html>
 

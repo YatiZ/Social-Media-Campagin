@@ -3,6 +3,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 10px;
 }
 
 .search input,
@@ -11,6 +12,12 @@
 }
 
 /* card */
+.article-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center articles horizontally */
+}
+
 figure {
   text-align: center;
 }
@@ -44,14 +51,18 @@ article a:focus {
   outline: 1px dotted #28666e;
 }
 
+#myArticles {
+  margin-bottom: 30px;
+}
 .articles {
   /* margin: 15px; */
   display: grid;
   max-width: 1200px;
-  margin-inline: auto;
+  margin: 0 auto;
   padding-inline: 24px;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  /* gap: 24px; */
+  justify-items: center;
+  gap: 24px;
 }
 .article-wrapper {
   background: rgba(255, 255, 255, 0.15);
@@ -59,6 +70,8 @@ article a:focus {
   padding: 14px;
   border-radius: 10px;
   margin: 10px;
+  max-width: 320px; 
+  text-align: center;
 }
 
 @media screen and (min-width: 1000px) {

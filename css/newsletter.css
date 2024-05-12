@@ -1,4 +1,7 @@
 /* glass card */
+* {
+  cursor: url("../images/Normal\ Select.cur") 3 3, auto;
+}
 
 .headline {
   display: flex;
@@ -45,5 +48,3 @@
   font-size: 15px;
   color: black;
 }
-
-

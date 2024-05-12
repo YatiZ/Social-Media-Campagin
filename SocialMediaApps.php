@@ -91,30 +91,33 @@ session_start();
     </nav>
 
     <div class="search">
-      <form class="d-flex" role="search">
+      <form class="d-flex" role="search" onSubmit = "return myFunction()">
         <input
           class="form-control me-2"
-          type="search"
+          type="text"
           placeholder="Search"
           aria-label="Search"
+          id="myFilter"
+          
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-secondary" type="button" onclick="resetSearch()">All</button>
       </form>
     </div>
 
     <h1 class="text-center">Most Popular Social Media Apps</h1>
 
     <!-- social media card section -->
-
+    <div id="myArticles" class="article-container">
     <section class="articles">
       <!-- For instagram -->
-      <article>
-        <div class="article-wrapper">
+      <article class="article-wrapper">
+        <div>
           <figure>
             <img src="/images/instagram.png" alt="" />
           </figure>
           <div class="article-body">
-            <h2>Instagram</h2>
+            <h2 class="article_title">Instagram</h2>
             <p>
               Instagram is a popular platform for sharing photos and videos.
             </p>
@@ -141,13 +144,13 @@ session_start();
       </article>
 
       <!-- for facebook -->
-      <article>
-        <div class="article-wrapper">
+      <article class="article-wrapper">
+        <div>
           <figure>
             <img src="/images/facebook.png" alt="" />
           </figure>
           <div class="article-body">
-            <h2>Facebook</h2>
+            <h2 class="article_title">Facebook</h2>
             <p>Facebook is a widely used social networking platform.</p>
             <b>Here's how to stay safe on Facebook:</b>
             <ul>
@@ -173,13 +176,13 @@ session_start();
       </article>
 
       <!-- for snapchat -->
-      <article>
-        <div class="article-wrapper">
+      <article class="article-wrapper">
+        <div>
           <figure>
             <img src="/images/snapchat.png" alt="" style="width: 150px" />
           </figure>
           <div class="article-body">
-            <h2>Snapchat</h2>
+            <h2 class="article_title">Snapchat</h2>
             <p>
               Snapchat is known for its disappearing photo and video messages.
             </p>
@@ -204,17 +207,15 @@ session_start();
           </div>
         </div>
       </article>
-    </section>
 
-    <section class="articles">
       <!-- for tiktok -->
-      <article>
-        <div class="article-wrapper">
+      <article class="article-wrapper">
+        <div>
           <figure>
             <img src="/images/tiktok.png" alt="" />
           </figure>
           <div class="article-body">
-            <h2>Tiktok</h2>
+            <h2 class="article_title">Tiktok</h2>
             <p>TikTok is a video-sharing platform popular among teenagers.</p>
             <b>Here are some safety tips for TikTok:</b>
             <ul>
@@ -241,13 +242,13 @@ session_start();
       </article>
 
       <!-- for whatsapp -->
-      <article>
-        <div class="article-wrapper">
+      <article class="article-wrapper">
+        <div>
           <figure>
             <img src="/images/whatsApp.png" alt="" />
           </figure>
           <div class="article-body">
-            <h2>WhatsApp</h2>
+            <h2 class="article_title">WhatsApp</h2>
             <p>
               WhatsApp is a messaging app known for its end-to-end encryption.
             </p>
@@ -275,13 +276,13 @@ session_start();
       </article>
 
       <!-- for twitter -->
-      <article>
-        <div class="article-wrapper">
+      <article class="article-wrapper">
+        <div>
           <figure>
             <img src="/images/twitter.png" alt="" />
           </figure>
           <div class="article-body">
-            <h2>Twitter</h2>
+            <h2 class="article_title">Twitter</h2>
             <p>
               Twitter is a microblogging platform where users share short posts
               called tweets.
@@ -309,6 +310,8 @@ session_start();
         </div>
       </article>
     </section>
+    </div>
+
 
     <!-- bar chart -->
     <div class="container text-center">
@@ -436,6 +439,40 @@ session_start();
 
     <!-- bar chart script -->
     <script>
+      function myFunction() {
+    var input, filter, article_wrappers, articleContainer, titles, i;
+
+    input = document.getElementById("myFilter");
+    filter = input.value.toUpperCase();
+    articleContainer = document.getElementById("myArticles");
+    article_wrappers = articleContainer.getElementsByClassName("article-wrapper");
+
+    for (i = 0; i < article_wrappers.length; i++) {
+        title = article_wrappers[i].querySelector(".article_title");
+        if (title) {
+            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                article_wrappers[i].style.display = "";
+            } else {
+                article_wrappers[i].style.display = "none";
+            }
+        }
+    }
+    return false;
+}
+
+function resetSearch() {
+    var article_wrappers, i;
+
+    article_wrappers = document.querySelectorAll("#myArticles .article-wrapper");
+
+    for (i = 0; i < article_wrappers.length; i++) {
+        article_wrappers[i].style.display = "";
+    }
+
+    document.getElementById("myFilter").value = ""; // Clear the search input
+}
+
+
       const xValues = [
         "Instagram",
         "Facebook",

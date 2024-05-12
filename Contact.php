@@ -7,7 +7,7 @@ session_start();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/contact.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,12 +19,11 @@ session_start();
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="/script.js"></script>
     <script
       src="https://kit.fontawesome.com/9dca7ae98e.js"
       crossorigin="anonymous"
     ></script>
-    <title>Home Page</title>
+    <title>Contact Page</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
@@ -90,47 +89,23 @@ session_start();
     </nav>
 
     <!-- contact form -->
-    
     <div class="container">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-lg-8">
-          <h2 class="text-center">Contact Us</h2>
-          <h4 class="text-center">We'd love to hear from you!</h4>
-          <div class="row input-container">
-            <div class="col-xs-12">
-              <div class="styled-input wide">
-                <input type="text" required />
-                <label>Name</label>
-              </div>
-            </div>
-            <div class="d-md-flex justify-content-lg-between">
-              <div class="col-md-6">
-                <div class="styled-input middle">
-                  <input type="email" required />
-                  <label>Email</label>
-                </div>
-              </div>
-              <div class="col-md-6 mt-md-0 mt-3">
-                <div class="styled-input middle">
-                  <input type="phone" required />
-                  <label>Phone</label>
-                </div>
-              </div>
-            </div>
+            <form class="card" action="/backend/contact_form.php" method="post">
+              <h1 class="title text-center">Hi! Contact with Us</h1>
+              <label for="username">Username</label>
+                <input type="text" placeholder="Username" name="username" required />
 
-            <div class="col-xs-12">
-              <div class="styled-input wide">
-                <textarea required></textarea>
-                <label>Message</label>
-              </div>
-            </div>
-            <div class="col-xs-12">
-              <div class="btn-lrg submit-btn">Send Message</div>
-            </div>
+                <label for="email">Email</label>
+                <input type="email" placeholder="youremail@gmail.com" name="email" required />
+
+                <label for="password">Messages</label>
+                <textarea type="text" placeholder="Enter your messages" name="message" required></textarea>
+                <br />
+                <button type="submit" value="submit" name="btn_submit" class="btn_contact">
+        Send
+      </button>
+            </form>
           </div>
-        </div>
-      </div>
-    </div>
 
     <!-- footer section -->
 

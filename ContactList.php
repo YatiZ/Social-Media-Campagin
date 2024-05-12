@@ -1,9 +1,9 @@
 <?php
 // Include database connection file
-include_once "config.php";
+include_once "backend/config.php";
 
 // Fetch data from the database
-$sql = "SELECT id, username, email FROM user_info";
+$sql = "SELECT id, username, email, message FROM contact";
 $result = mysqli_query($con,$sql);
 ?>
 
@@ -85,8 +85,9 @@ $result = mysqli_query($con,$sql);
       <ul class="responsive-table">
         <li class="table-header">
           <div class="col col-1">User Id</div>
-          <div class="col col-2">User Name</div>
-          <div class="col col-3">Email</div>
+          <div class="col col-1">User Name</div>
+          <div class="col col-2">Email</div>
+          <div class="col col-3">Messages</div>
         </li>
 
         <?php
@@ -96,8 +97,9 @@ $result = mysqli_query($con,$sql);
             while ($row = $result->fetch_assoc()) {
                 echo "<li>";
                 echo "<div class='col col-1'>" . $row["id"] . "</div>";
-                echo "<div class='col col-2'>" . $row["username"] . "</div>";
-                echo "<div class='col col-3'>" . $row["email"] . "</div>";
+                echo "<div class='col col-1'>" . $row["username"] . "</div>";
+                echo "<div class='col col-2'>" . $row["email"] . "</div>";
+                echo "<div class='col col-3'>" . $row["message"] . "</div>";
                 echo "</li>";
             }
         } else {
@@ -106,10 +108,7 @@ $result = mysqli_query($con,$sql);
         ?>
       </ul>
     </div>
-    <div class="mx-10">
-        <a href="/Home.php">Home</a>
-        <a href="/auth/LoginPage.html">LogIn</a>
-    </div>
+
 </body>
 </html>
 
