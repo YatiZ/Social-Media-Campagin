@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/auth.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/backend/register.php" method="post">
+      <h3>Sign Up Here hkk</h3>
+
+      <label for="username">Username</label>
+      <input type="text" placeholder="Username" name="un" required />
+
+      <label for="email">Email</label>
+      <input type="email" placeholder="youremail@gmail.com" name="e" required />
+
+      <label for="password">Password</label>
+      <input type="password" placeholder="Password" name="pw" required />
+      <br />
+      <input type="submit" name="reg" value="Create" />
+      <div class="social">
+        <p>Have account? <a href="/auth/LoginPage.html">Sign In</a></p>
+      </div>
+      <div class="social">
+        <p>Go <a href="/backend/admin.php">Admin</a></p>
+      </div>
+    </form>
+  </body>
+</html>

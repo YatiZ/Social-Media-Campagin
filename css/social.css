@@ -1,0 +1,160 @@
+.search {
+  margin: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.search input,
+.search button {
+  text-align: start;
+}
+
+/* card */
+figure {
+  text-align: center;
+}
+.articles img {
+  width: 80px;
+  padding-top: 5px;
+  display: inline-block;
+}
+
+.article-body h2 {
+  text-align: center;
+}
+
+.article-body b {
+  color: green;
+}
+
+.article-body {
+  padding-left: 24px;
+  padding-right: 20px;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #28666e;
+}
+
+article a:focus {
+  outline: 1px dotted #28666e;
+}
+
+.articles {
+  /* margin: 15px; */
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  /* gap: 24px; */
+}
+.article-wrapper {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  padding: 14px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+@media screen and (min-width: 1000px) {
+  .article-wrapper {
+    height: 700px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  article {
+    container: card/inline-size;
+  }
+  .article-body p {
+    display: none;
+  }
+
+  figure img {
+    width: 30px;
+  }
+}
+
+@container card (min-width: 380px) {
+  .article-wrapper {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+  .article-body {
+    padding-left: 0;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  figure img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+
+/* for bar chart */
+.simple-bar-chart {
+  --line-count: 10;
+  --line-color: currentcolor;
+  --line-opacity: 0.25;
+  --item-gap: 2%;
+  --item-default-color: #060606;
+
+  height: 10rem;
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--item-gap);
+  align-items: end;
+  padding-inline: var(--item-gap);
+  --padding-block: 1.5rem; /*space for labels*/
+  padding-block: var(--padding-block);
+  position: relative;
+  isolation: isolate;
+}
+
+.simple-bar-chart::after {
+  content: "";
+  position: absolute;
+  inset: var(--padding-block) 0;
+  z-index: -1;
+  --line-width: 1px;
+  --line-spacing: calc(100% / var(--line-count));
+  background-image: repeating-linear-gradient(
+    to top,
+    transparent 0 calc(var(--line-spacing) - var(--line-width)),
+    var(--line-color) 0 var(--line-spacing)
+  );
+  box-shadow: 0 var(--line-width) 0 var(--line-color);
+  opacity: var(--line-opacity);
+}
+.simple-bar-chart > .item {
+  height: calc(1% * var(--val));
+  background-color: var(--clr, var(--item-default-color));
+  position: relative;
+  animation: item-height 1s ease forwards;
+}
+@keyframes item-height {
+  from {
+    height: 0;
+  }
+}
+
+.simple-bar-chart > .item > * {
+  position: absolute;
+  text-align: center;
+}
+.simple-bar-chart > .item > .label {
+  inset: 100% 0 auto 0;
+}
+.simple-bar-chart > .item > .value {
+  inset: auto 0 100% 0;
+}
