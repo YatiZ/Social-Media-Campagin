@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         // Execute the statement
         if (mysqli_stmt_execute($stmt)) {
             echo "<div class=\"alert\" id=\"noti\">
-            <h2>Success!</h2>
+            <h2>Thank You!</h2>
             <div>
               Your messages have been sent. Would you like to Go back to <a href=\"../Contact.php\">Contact</a>
             </div>
@@ -56,6 +56,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   justify-content: center;
   align-items: center;
   left: 30%;
+}
+
+@media screen and (max-width: 767px) {
+  .alert {
+    width:500px; 
+    bottom: 60%;
+    left: 20%;
+  }
+
 }
 
 </style>

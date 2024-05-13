@@ -17,6 +17,7 @@ session_start();
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/css/legislation.css" />
     <script src="/script.js"></script>
     <script
       src="https://kit.fontawesome.com/9dca7ae98e.js"
@@ -24,8 +25,8 @@ session_start();
     ></script>
     <title>Home Page</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top" data-bs-theme="dark" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="/Home.php">Home</a>
         <button
@@ -109,16 +110,27 @@ session_start();
         </div>
       </div>
     </nav>
-    <h1>This is Legislation Page</h1>
-    <form class="d-flex" role="search">
-      <input
-        class="form-control me-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+    <div style="padding-top: 60px;"></div>
+
+    <h1 class="text-center">Legislation and Guidance</h1>
+    <div class="content">
+    <h3>Legislation Overview</h3>
+    <p>In the context of online social media use, several laws and regulations govern various aspects of privacy, data protection, intellectual property, and online behavior. Understanding these laws is crucial for both individuals and organizations to ensure compliance and protect their rights.</p>
+    <div class="flex-column d-flex align-items-center image">
+      <img src="images/DataPrivacy.jpeg" width="100%"/>
+    </div>
+    <br><br>
+    <h3>What is Data Protection Laws?</h3>
+    <p>Data protection laws, such as the General Data Protection Regulation (GDPR) in the European Union and the California Consumer Privacy Act (CCPA) in the United States, regulate how social media platforms collect, store, and process users' personal data. These laws aim to safeguard individuals' privacy rights and require platforms to obtain explicit consent for data collection and offer options for users to control their privacy settings.</p>
+    <br>
+    <h3>Intellectual Property Laws</h3>  
+    <p>When creating and sharing content on social media, always consider the impact on others and adhere to community guidelines. Avoid posting offensive or harmful content, and respect copyright and intellectual property rights by giving credit to the original creators when necessary.</p>
+    <br>
+    <h3>Security Measures</h3>
+    <p>Protect your social media accounts from unauthorized access by using strong, unique passwords, enabling two-factor authentication, and being cautious of phishing attempts. Regularly review your account activity and report any suspicious behavior to the platform</p>
+  </div>
+
+    
 
         <!-- footer section -->
 

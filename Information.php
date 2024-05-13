@@ -25,8 +25,8 @@ session_start();
     ></script>
     <title>Home Page</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top" data-bs-theme="dark" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="/Home.php">Home</a>
         <button
@@ -116,7 +116,7 @@ session_start();
         </div>
       </div>
     </nav>
-
+    <div style="padding-top: 60px;"></div>
     <section id="about-us">
       <div class="container mt-5">
         <div class="row">
