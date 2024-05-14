@@ -146,15 +146,15 @@ session_start();
           </p>
           <ul class="">
             <li>
-              * Are they using their device in secret or lying about device use?
+               Are they using their device in secret or lying about device use?
             </li>
             <li>
-              * Are they isolating themselves from family, friends or activities
+              Are they isolating themselves from family, friends or activities
               they once enjoyed?
             </li>
-            <li>* Do they feel frustrated or upset when they online?</li>
+            <li> Do they feel frustrated or upset when they online?</li>
             <li>
-              * Do they compare themselves to others online and express feeling
+               Do they compare themselves to others online and express feeling
               of inadequacy?
             </li>
           </ul>

@@ -1,6 +1,6 @@
 /* glass card */
 * {
-  cursor: url("../images/Normal\ Select.cur") 3 3, auto;
+  cursor: url("../images/Normal\ Select.cur"), auto;
 }
 
 .headline {

@@ -228,6 +228,14 @@ session_start();
             </div>
           </div>
         </div>
+        <br>
+        <!-- social media types -->
+        <div class="mt-5">
+       
+        <p class="cursor-default-hover">If you want to start social app development, you should understand what type of social media your idea belongs to. In this case, you can define your competitors, target audience, and offer users more appropriate functionality.</p>
+        <img src="/images/types-of-social-media-app-48-2.jpeg" class="img-fluid"/>
+        </div>
+
         <div class="">
           <h2 class="mb-3 mt-5 text-center">
             Empowering teenagers to stay safe online

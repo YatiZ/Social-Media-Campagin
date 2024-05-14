@@ -1,10 +1,8 @@
 * {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  cursor: url('./images/Normal\ Select.cur') 5px 5px, auto;
+  cursor: url('./images/cursor.png') 5px 5px, auto;
 }
-
-
 
 h1,
 h2,

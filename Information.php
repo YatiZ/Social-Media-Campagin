@@ -160,7 +160,7 @@ session_start();
 
     <!-- risk lists -->
     <section id="social-risks">
-      <h3 class="text-center">Tips to keep teenagers safe online</h3>
+      <h3 class="text-center">How to stay safe online</h3>
       <ol class="olcards">
         <li style="--cardColor: #fc374e">
           <div class="content">
